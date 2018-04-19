@@ -10,3 +10,6 @@ P.S.
 
 ////////////////////////////////////////////////////
 1. Run node app.js
+http://localhost:3000/ for index page and Menu
+
+
