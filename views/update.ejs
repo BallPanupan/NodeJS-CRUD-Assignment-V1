@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>insert</title>
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+        <center>
+          <p>Update Page</p>
+            <center>
+                <a class="btn btn-outline-primary" href="/insert">insert</a>
+                <a class="btn btn-outline-primary" href="/Views">Views</a>
+                <p></p>
+            <center>
+
+            <form method="post" action="/update">
+              <p><input type="text" class="form-control" name="fname" value="<%=data.fname%>"></p>
+              <p><input type="text" class="form-control" name="lname" value="<%=data.lname%>"></p>
+              <p><input type="text" class="form-control" name="sex" value="<%=data.sex%>"></p>
+
+              <% var _id = data._id%>
+              <input type="hidden" name="_id" value="<%=_id%>">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </center>
+      </div>
+
+      <div class="col-sm-4">
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

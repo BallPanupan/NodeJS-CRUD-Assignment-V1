@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start-dev
+    volumes:
+     - ./app:/usr/src/app/app
+     - ./app.js:/usr/src/app/app.js
+    environment:
+      - MONGODB_URL=mongo/pkap-todolists
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    volumes:
+        - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-data:
+    driver: local

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>insert</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+  <center><p>View Page</p><center>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-4">
+      </div>
+
+      <div class="col-sm-4">
+
+        <a class="btn btn-outline-primary" href="./insert">insert</a>
+        <a class="btn btn-outline-primary" href="./Views">Views</a>
+        <p></p>
+
+        <center>
+          <table border ="1">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>_id</th>
+                <th>Frist Name</th>
+                <th>Last Name</th>
+                <th>sex</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tr>
+              <% for(var i = 0; i < data.length; ++i) {%>
+                <th><%=i+1%></th>
+                <td><%=data[i]._id%></td>
+                <td><%=data[i].fname%></td>
+                <td><%=data[i].lname%></td>
+                <td><%=data[i].sex%></td>
+              </td>
+              <td>
+                <a class="btn btn-success"href="/update/<%=data[i]._id%>"role="button">Update</a>
+              </td>
+              <td>
+                <a class="btn btn-danger"href="/delete/<%=data[i]._id%>"role="button"onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+              </td>
+            </tr>
+          <% } %>
+        </center>
+      </div>
+
+      <div class="col-sm-4">
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
